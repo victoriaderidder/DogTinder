@@ -47,7 +47,7 @@ CREATE TABLE `Location` (
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
  
 INSERT INTO `Location` (`Name`, `Zip`,  `City`, `State`, `Address`) VALUES
-('Pilgrim Bark Park', '227 US-6','Provincetown', 'MA', '227 US-6'),
+('Pilgrim Bark Park', '22702','Provincetown', 'MA', '227 US-6'),
 ('Central Park', '54545', 'New York', 'NY', '1800 Central Park Dr'),
 ('Harbour View', '23435', 'Suffolk', 'VA', '5111 N Kemper Lakes Ct'),
 ('Maymont', '23112', 'Richmond', 'VA', '15520 Fox Gate Ct'),
