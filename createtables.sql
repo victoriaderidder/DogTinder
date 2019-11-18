@@ -60,11 +60,11 @@ INSERT INTO `Location` (`Name`, `Zip`,  `City`, `State`, `Address`) VALUES
  
  
 CREATE TABLE `Hates` (
-  `Dog ID_1` bigint(11) NOT NULL, 
-  `HatesDog ID_2` bigint(11) NOT NULL
+  `Dog_ID` bigint(11) NOT NULL, 
+  `HatesDog_ID_2` bigint(11) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
  
-INSERT INTO `Hates` (`Dog_ID_1`, `HatesDog_ID_2`) VALUES
+INSERT INTO `Hates` (`Dog_ID`, `HatesDog_ID_2`) VALUES
 (10177554545, 88876129012),
 (88876129012, 10177554545),
 (98734510392, 10177554545),
@@ -78,11 +78,11 @@ INSERT INTO `Hates` (`Dog_ID_1`, `HatesDog_ID_2`) VALUES
 
 
 CREATE TABLE `Loves` (
-  `Dog ID_1` bigint(11) NOT NULL, 
-  `LovesDog ID_2` bigint(11) NOT NULL
+  `Dog_ID` bigint(11) NOT NULL, 
+  `LovesDog_ID_2` bigint(11) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
  
-INSERT INTO `Loves` (`Dog_ID_1`, `LovesDog_ID_2`) VALUES
+INSERT INTO `Loves` (`Dog_ID`, `LovesDog_ID_2`) VALUES
 (10177554545, 88876129012),
 (88876129012, 10177554545),
 (98734510392, 10177554545),
