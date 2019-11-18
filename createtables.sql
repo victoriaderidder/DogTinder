@@ -4,20 +4,20 @@ CREATE TABLE `Dog_Profile` (
   `Gender` varchar(2) NOT NULL, 
   `Fixed` bit(1) NOT NULL, 
   `Description` varchar(500) DEFAULT NULL,
-  `Dog_ID` bigint(11) NOT NULL
+  `Dog_ID` int(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
  
 INSERT INTO `Dog_Profile` (`Phone_Number`, `Name`, `Gender`, `Fixed`, `Description`, `Dog_ID`) VALUES
-(5036666666, 'Santa', 'M', 1, 'A Maltese Male anger issues with a jolly disposition. Blake in Color with hair tufts that make it appear as it has horns.' , 56456563811),
-(7577577577, 'Impulse', 'M', 1, 'He love to jump and bark', 10177554545),
-(7038048505, 'Hero', 'M', 1, 'Really bad dog', 10177422958),
-(5034564567, 'Angel', 'F', 1, 'A wonderful dog that acts like a grandmother to baby dogs.', 53424613513),
-(3842901767, 'Kaylee', 'F', 1, 'Just the worst', 88876129012),
-(9998887777, 'Sunny', 'F', 1, 'She will eat your socks', 12345678920),
-(3456781234, 'Jeremiah', 'M', 0, 'He was a bullfrog', 98734510392),
-(1982934012, 'Pluto', 'M', 0, 'Mickeys best friend', 30303030303),
-(5034564560, 'Lily', 'F', 0, 'A cute hyper dog that loves to bark as much as she loves cheese', 53424613514),
-(5034564567, 'Elijah', 'M', 0, 'A Dog who looks and acts like a stuff animal.', 53424613515);
+(5036666666, 'Santa', 'M', 1, 'A Maltese Male anger issues with a jolly disposition. Blake in Color with hair tufts that make it appear as it has horns.' , 564565638),
+(7577577577, 'Impulse', 'M', 1, 'He love to jump and bark', 101775545),
+(7038048505, 'Hero', 'M', 1, 'Really bad dog', 101774229),
+(5034564567, 'Angel', 'F', 1, 'A wonderful dog that acts like a grandmother to baby dogs.', 534246135),
+(3842901767, 'Kaylee', 'F', 1, 'Just the worst', 888761290),
+(9998887777, 'Sunny', 'F', 1, 'She will eat your socks', 123456789),
+(3456781234, 'Jeremiah', 'M', 0, 'He was a bullfrog', 987345103),
+(1982934012, 'Pluto', 'M', 0, 'Mickeys best friend', 303030303),
+(5034564560, 'Lily', 'F', 0, 'A cute hyper dog that loves to bark as much as she loves cheese', 534246135),
+(5034564567, 'Elijah', 'M', 0, 'A Dog who looks and acts like a stuff animal.', 534246135);
  
 CREATE TABLE `User` (
   `Name` varchar(20) NOT NULL,
@@ -60,36 +60,38 @@ INSERT INTO `Location` (`Name`, `Zip`,  `City`, `State`, `Address`) VALUES
  
  
 CREATE TABLE `Hates` (
-  `Dog_ID` bigint(11) NOT NULL, 
-  `HatesDog_ID_2` bigint(11) NOT NULL
+  `Dog_ID` int(9) NOT NULL, 
+  `HatesDog_ID_2` int(9) NOT NULL,
+  `HateKey` bigint(18) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
  
 INSERT INTO `Hates` (`Dog_ID`, `HatesDog_ID_2`) VALUES
-(10177554545, 88876129012),
-(88876129012, 10177554545),
-(98734510392, 10177554545),
-(10177554545, 98734510392),
-(98734510392, 88876129012),
-(53424613515, 7577577577),
-(30303030303, 10177554545),
-(10177554545, 30303030303),
-(98734510392, 10177554545),
-(12345678920, 53424613513);
+(101775545, 888761290, CONCAT(`Dog_ID`, `HatesDog_ID_2`)),
+(888761290, 101775545, CONCAT(`Dog_ID`, `HatesDog_ID_2`)),
+(987345103, 101775545, CONCAT(`Dog_ID`, `HatesDog_ID_2`)),
+(101775545, 987345103, CONCAT(`Dog_ID`, `HatesDog_ID_2`)),
+(987345103, 888761290, CONCAT(`Dog_ID`, `HatesDog_ID_2`)),
+(534246135, 757757775, CONCAT(`Dog_ID`, `HatesDog_ID_2`)),
+(303030303, 101775545, CONCAT(`Dog_ID`, `HatesDog_ID_2`)),
+(101775545, 303030303, CONCAT(`Dog_ID`, `HatesDog_ID_2`)),
+(987345103, 101775545, CONCAT(`Dog_ID`, `HatesDog_ID_2`)),
+(123456789, 534246135, CONCAT(`Dog_ID`, `HatesDog_ID_2`));
 
 
 CREATE TABLE `Loves` (
-  `Dog_ID` bigint(11) NOT NULL, 
-  `LovesDog_ID_2` bigint(11) NOT NULL
+  `Dog_ID` int(9) NOT NULL, 
+  `LovesDog_ID_2` int(9) NOT NULL,
+  `LoveKey` bigint(18) NOT NULL,
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
  
 INSERT INTO `Loves` (`Dog_ID`, `LovesDog_ID_2`) VALUES
-(10177554545, 88876129012),
-(88876129012, 10177554545),
-(98734510392, 10177554545),
-(10177554545, 98734510392),
-(98734510392, 88876129012),
-(53424613515, 7577577577),
-(30303030303, 10177554545),
-(10177554545, 30303030303),
-(98734510392, 10177554545),
-(12345678920, 53424613513);
+(101775545, 888761290, CONCAT(`Dog_ID`, `LovesDog_ID_2`)),
+(888761290, 101775545, CONCAT(`Dog_ID`, `LovesDog_ID_2`)),
+(987345103, 101775545, CONCAT(`Dog_ID`, `LovesDog_ID_2`)),
+(101775545, 987345103, CONCAT(`Dog_ID`, `LovesDog_ID_2`)),
+(987345103, 888761290, CONCAT(`Dog_ID`, `LovesDog_ID_2`)),
+(534246135, 757757775, CONCAT(`Dog_ID`, `LovesDog_ID_2`)),
+(303030303, 101775545, CONCAT(`Dog_ID`, `LovesDog_ID_2`)),
+(101775545, 303030303, CONCAT(`Dog_ID`, `LovesDog_ID_2`)),
+(987345103, 101775545, CONCAT(`Dog_ID`, `LovesDog_ID_2`)),
+(123456789, 534246135, CONCAT(`Dog_ID`, `LovesDog_ID_2`));
