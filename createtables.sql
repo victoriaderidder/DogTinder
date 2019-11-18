@@ -1,10 +1,10 @@
 CREATE TABLE `Dog_Profile` (
-  `Phone_Number` int(11) NOT NULL,
+  `Phone_Number` bigint(11) NOT NULL,
   `Name` varchar(20) NOT NULL,
   `Gender` varchar(2) NOT NULL, 
   `Fixed` bit(1) NOT NULL, 
   `Description` varchar(500) DEFAULT NULL,
-  `Dog_ID` int(11) NOT NULL,
+  `Dog_ID` bigint(11) NOT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
  
 INSERT INTO `Dog_Profile` (`Phone_Number`, `Name`, `Gender`, `Fixed`, `Description`, `Dog_ID`) VALUES
@@ -60,8 +60,8 @@ INSERT INTO `Location` (`Name`, `Zip`,  `City`, `State`, `Address`) VALUES
  
  
 CREATE TABLE `Hates` (
-  `Dog ID_1` int(11) NOT NULL, 
-  `HatesDog ID_2` int(11) NOT NULL
+  `Dog ID_1` bigint(11) NOT NULL, 
+  `HatesDog ID_2` bigint(11) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
  
 INSERT INTO `Hates` (`Dog ID_1`, `HatesDog ID_2`) VALUES
@@ -78,8 +78,8 @@ INSERT INTO `Hates` (`Dog ID_1`, `HatesDog ID_2`) VALUES
 
 
 CREATE TABLE `Loves` (
-  `Dog ID_1` int(11) NOT NULL, 
-  `LovesDog ID_2` int(11) NOT NULL
+  `Dog ID_1` bigint(11) NOT NULL, 
+  `LovesDog ID_2` bigint(11) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
  
 INSERT INTO `Loves` (`Dog ID_1`, `LovesDog ID_2`) VALUES
