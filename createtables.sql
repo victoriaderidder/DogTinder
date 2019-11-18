@@ -65,7 +65,7 @@ CREATE TABLE `Hates` (
   `HateKey` bigint(18) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
  
-INSERT INTO `Hates` (`Dog_ID`, `HatesDog_ID_2`) VALUES
+INSERT INTO `Hates` (`Dog_ID`, `HatesDog_ID_2`, `HateKey`) VALUES
 (101775545, 888761290, CONCAT(`Dog_ID`, `HatesDog_ID_2`)),
 (888761290, 101775545, CONCAT(`Dog_ID`, `HatesDog_ID_2`)),
 (987345103, 101775545, CONCAT(`Dog_ID`, `HatesDog_ID_2`)),
@@ -84,7 +84,7 @@ CREATE TABLE `Loves` (
   `LoveKey` bigint(18) NOT NULL,
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
  
-INSERT INTO `Loves` (`Dog_ID`, `LovesDog_ID_2`) VALUES
+INSERT INTO `Loves` (`Dog_ID`, `LovesDog_ID_2`, `LoveKey`) VALUES
 (101775545, 888761290, CONCAT(`Dog_ID`, `LovesDog_ID_2`)),
 (888761290, 101775545, CONCAT(`Dog_ID`, `LovesDog_ID_2`)),
 (987345103, 101775545, CONCAT(`Dog_ID`, `LovesDog_ID_2`)),
