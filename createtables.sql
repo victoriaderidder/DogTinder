@@ -10,7 +10,7 @@ CREATE TABLE `Dog_Profile` (
 INSERT INTO `Dog_Profile` (`Phone_Number`, `Name`, `Gender`, `Fixed`, `Description`, `Dog_ID`) VALUES
 (5036666666, 'Santa', 'M', 1, 'A Maltese Male anger issues with a jolly disposition. Blake in Color with hair tufts that make it appear as it has horns.' , 56456563811),
 (7577577577, 'Impulse', 'M', 1, 'He love to jump and bark', 10177554545),
-(70380480505, 'Hero', 'M', 1, 'Really bad dog', 10177422958),
+(7038048505, 'Hero', 'M', 1, 'Really bad dog', 10177422958),
 (5034564567, 'Angel', 'F', 1, 'A wonderful dog that acts like a grandmother to baby dogs.', 53424613513),
 (3842901767, 'Kaylee', 'F', 1, 'Just the worst', 88876129012),
 (9998887777, 'Sunny', 'F', 1, 'She will eat your socks', 12345678920),
