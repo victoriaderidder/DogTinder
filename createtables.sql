@@ -4,7 +4,7 @@ CREATE TABLE `Dog_Profile` (
   `Gender` varchar(2) NOT NULL, 
   `Fixed` bit(1) NOT NULL, 
   `Description` varchar(500) DEFAULT NULL,
-  `Dog_ID` bigint(11) NOT NULL,
+  `Dog_ID` bigint(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
  
 INSERT INTO `Dog_Profile` (`Phone_Number`, `Name`, `Gender`, `Fixed`, `Description`, `Dog_ID`) VALUES
