@@ -69,9 +69,7 @@ INSERT INTO `Location` (`Name`, `Zip`,  `City`, `State`, `Address`) VALUES
 CREATE TABLE `Hates` (
   `Dog_ID` int(9) NOT NULL, 
   `HatesDog_ID_2` int(9) NOT NULL,
-  `HateKey` bigint(18) NOT NULL,
-    PRIMARY KEY (HatesDog_ID_2),
-    FOREIGN KEY (Dog_ID) REFERENCES Dog_Profile(Dog_ID)
+  `HateKey` bigint(18) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
  
 INSERT INTO `Hates` (`Dog_ID`, `HatesDog_ID_2`, `HateKey`) VALUES
@@ -90,9 +88,7 @@ INSERT INTO `Hates` (`Dog_ID`, `HatesDog_ID_2`, `HateKey`) VALUES
 CREATE TABLE `Loves` (
   `Dog_ID` int(9) NOT NULL, 
   `LovesDog_ID_2` int(9) NOT NULL,
-  `LoveKey` bigint(18) NOT NULL,
-    PRIMARY KEY (LovesDog_ID_2),
-    FOREIGN KEY (Dog_ID) REFERENCES Dog_Profile(Dog_ID)
+  `LoveKey` bigint(18) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
  
 INSERT INTO `Loves` (`Dog_ID`, `LovesDog_ID_2`, `LoveKey`) VALUES
