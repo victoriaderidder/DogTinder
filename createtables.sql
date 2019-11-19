@@ -30,17 +30,19 @@ CREATE TABLE `Dog_Profile` (
     
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
  
+ 
 INSERT INTO `Dog_Profile` (`Phone_Number`, `Name`, `Gender`, `Fixed`, `Description`, `Dog_ID`, `Username`) VALUES
 (5036666666, 'Santa', 'M', 1, 'A Maltese Male anger issues with a jolly disposition. Blake in Color with hair tufts that make it appear as it has horns.' , 564565638, 'PalaceDog'),
 (7577577577, 'Impulse', 'M', 1, 'He love to jump and bark', 101775545, 'Clipper'),
 (7038048505, 'Hero', 'M', 1, 'Really bad dog', 101774229, 'ilovecatslol'),
-(5034564567, 'Angel', 'F', 1, 'A wonderful dog that acts like a grandmother to baby dogs.', 534246135, 'DogLover63'),
+(5034564567, 'Angel', 'F', 1, 'A wonderful dog that acts like a grandmother to baby dogs.', 534246136, 'DogLover63'),
 (3842901767, 'Kaylee', 'F', 1, 'Just the worst', 888761290, 'IhateAnimals32'),
 (9998887777, 'Sunny', 'F', 1, 'She will eat your socks', 123456789, 'DogLover42'),
 (3456781234, 'Jeremiah', 'M', 0, 'He was a bullfrog', 987345103, 'DogLover42'),
 (1982934012, 'Pluto', 'M', 0, 'Mickeys best friend', 303030303, 'PumpkinButt'),
-(5034564560, 'Lily', 'F', 0, 'A cute hyper dog that loves to bark as much as she loves cheese', 534246135, 'HandsomeManonHorse'),
-(5034564567, 'Elijah', 'M', 0, 'A Dog who looks and acts like a stuff animal.', 534246135, 'HandsomeManonHorse');
+(5034564560, 'Lily', 'F', 0, 'A cute hyper dog that loves to bark as much as she loves cheese', 534246137, 'HandsomeManonHorse'),
+(5034564567, 'Elijah', 'M', 0, 'A Dog who looks and acts like a stuff animal.', 534246139, 'HandsomeManonHorse');
+
 
  
 CREATE TABLE `Location` (
