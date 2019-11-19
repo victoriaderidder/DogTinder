@@ -69,7 +69,9 @@ INSERT INTO `Location` (`Name`, `Zip`,  `City`, `State`, `Address`) VALUES
 CREATE TABLE `Hates` (
   `Dog_ID` int(9) NOT NULL, 
   `HatesDog_ID_2` int(9) NOT NULL,
-  `HateKey` bigint(18) NOT NULL
+  `HateKey` bigint(18) NOT NULL,
+    PRIMARY KEY (HateKey),
+   FOREIGN KEY (Dog_ID) REFERENCES Dog_Profile(Dog_ID)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
  
 INSERT INTO `Hates` (`Dog_ID`, `HatesDog_ID_2`, `HateKey`) VALUES
@@ -78,17 +80,19 @@ INSERT INTO `Hates` (`Dog_ID`, `HatesDog_ID_2`, `HateKey`) VALUES
 (987345103, 101775545, CONCAT(`Dog_ID`, `HatesDog_ID_2`)),
 (101775545, 987345103, CONCAT(`Dog_ID`, `HatesDog_ID_2`)),
 (987345103, 888761290, CONCAT(`Dog_ID`, `HatesDog_ID_2`)),
-(534246135, 757757775, CONCAT(`Dog_ID`, `HatesDog_ID_2`)),
+(534246137, 757757775, CONCAT(`Dog_ID`, `HatesDog_ID_2`)),
 (303030303, 101775545, CONCAT(`Dog_ID`, `HatesDog_ID_2`)),
 (101775545, 303030303, CONCAT(`Dog_ID`, `HatesDog_ID_2`)),
-(987345103, 101775545, CONCAT(`Dog_ID`, `HatesDog_ID_2`)),
-(123456789, 534246135, CONCAT(`Dog_ID`, `HatesDog_ID_2`));
+(303030303, 101775545, CONCAT(`Dog_ID`, `HatesDog_ID_2`)),
+(123456789, 534246137, CONCAT(`Dog_ID`, `HatesDog_ID_2`));
 
 
 CREATE TABLE `Loves` (
   `Dog_ID` int(9) NOT NULL, 
   `LovesDog_ID_2` int(9) NOT NULL,
-  `LoveKey` bigint(18) NOT NULL
+  `LoveKey` bigint(18) NOT NULL,
+     PRIMARY KEY (LoveKey),
+   FOREIGN KEY (Dog_ID) REFERENCES Dog_Profile(Dog_ID)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
  
 INSERT INTO `Loves` (`Dog_ID`, `LovesDog_ID_2`, `LoveKey`) VALUES
@@ -97,8 +101,8 @@ INSERT INTO `Loves` (`Dog_ID`, `LovesDog_ID_2`, `LoveKey`) VALUES
 (987345103, 101775545, CONCAT(`Dog_ID`, `LovesDog_ID_2`)),
 (101775545, 987345103, CONCAT(`Dog_ID`, `LovesDog_ID_2`)),
 (987345103, 888761290, CONCAT(`Dog_ID`, `LovesDog_ID_2`)),
-(534246135, 757757775, CONCAT(`Dog_ID`, `LovesDog_ID_2`)),
+(534246137, 757757775, CONCAT(`Dog_ID`, `LovesDog_ID_2`)),
 (303030303, 101775545, CONCAT(`Dog_ID`, `LovesDog_ID_2`)),
 (101775545, 303030303, CONCAT(`Dog_ID`, `LovesDog_ID_2`)),
-(987345103, 101775545, CONCAT(`Dog_ID`, `LovesDog_ID_2`)),
-(123456789, 534246135, CONCAT(`Dog_ID`, `LovesDog_ID_2`));
+(303030303, 101775545, CONCAT(`Dog_ID`, `LovesDog_ID_2`)),
+(123456789, 534246137, CONCAT(`Dog_ID`, `LovesDog_ID_2`));
