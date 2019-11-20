@@ -1,4 +1,4 @@
- CREATE TABLE `User` (
+  CREATE TABLE `User` (
   `Name` varchar(20) NOT NULL,
   `Username` varchar(20) NOT NULL, 
   `Password` varchar(20) NOT NULL, 
