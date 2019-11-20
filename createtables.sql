@@ -46,25 +46,49 @@ INSERT INTO `Dog_Profile` (`Phone_Number`, `Name`, `Gender`, `Fixed`, `Descripti
 
  
 CREATE TABLE `Location` (
+  `Location_ID` int(9) NOT NULL, 
   `Name` varchar(50) NOT NULL,
   `Zip` int(5) NOT NULL, 
   `City` varchar(20) NOT NULL,
   `State` varchar(2) NOT NULL,
-  `Address` varchar(50) NOT NULL 
+  `Address` varchar(50) NOT NULL, 
+   PRIMARY KEY (`Location_ID`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
  
-INSERT INTO `Location` (`Name`, `Zip`,  `City`, `State`, `Address`) VALUES
-('Pilgrim Bark Park', '22702','Provincetown', 'MA', '227 US-6'),
-('Central Park', '54545', 'New York', 'NY', '1800 Central Park Dr'),
-('Harbour View', '23435', 'Suffolk', 'VA', '5111 N Kemper Lakes Ct'),
-('Maymont', '23112', 'Richmond', 'VA', '15520 Fox Gate Ct'),
-('Public Garden', '12134', 'Boston', 'MA', '751 Tremont St'),
-('Boston Common', '12134', 'Boston', 'MA', '791 Boylston St'),
-('Creekside and Spring Creek Dog Park', '97333', 'Corvallis', 'OR', '1613 SW 49th St'),
-('Albany Dog Park at Timber Linn Park', '97332', 'Albany', 'OR', 'Price Rd SE'),
-('Woodland Meadow Park', '97333', 'Corvallis', 'OR', '3540 NW Circle Blvd'),
-('Corvallis Fenced Dog Park', '97333', 'Corvallis', 'OR', '205 SW B Ave');
+INSERT INTO `Location` ( `Location_ID`, `Name`, `Zip`,  `City`, `State`, `Address`) VALUES
+(227020001, 'Pilgrim Bark Park', '22702','Provincetown', 'MA', '227 US-6'),
+(545450001, 'Central Park', '54545', 'New York', 'NY', '1800 Central Park Dr'),
+(234350001, 'Harbour View', '23435', 'Suffolk', 'VA', '5111 N Kemper Lakes Ct'),
+(231120001, 'Maymont', '23112', 'Richmond', 'VA', '15520 Fox Gate Ct'),
+(121340001, 'Public Garden', '12134', 'Boston', 'MA', '751 Tremont St'),
+(121340002, 'Boston Common', '12134', 'Boston', 'MA', '791 Boylston St'),
+(973330001, 'Creekside and Spring Creek Dog Park', '97333', 'Corvallis', 'OR', '1613 SW 49th St'),
+(973320001, 'Albany Dog Park at Timber Linn Park', '97332', 'Albany', 'OR', 'Price Rd SE'),
+(973330002, 'Woodland Meadow Park', '97333', 'Corvallis', 'OR', '3540 NW Circle Blvd'),
+(973330003, 'Corvallis Fenced Dog Park', '97333', 'Corvallis', 'OR', '205 SW B Ave');
  
+ 
+ CREATE TABLE `Visited` (
+  `Username` varchar(20) NOT NULL, 
+  `Location_ID` int(9) NOT NULL, 
+   `VisitedKey` varchar(29) NOT NULL,
+   PRIMARY KEY (VisitedKey),
+    FOREIGN KEY (Username) REFERENCES User(Username),
+  FOREIGN KEY (Location_ID) REFERENCES Location(Location_ID)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `Visited` (`Username`, `Location_ID`, `VisitedKey`) VALUES
+('HandsomeManonHorse', 973330001, CONCAT(`Username`, `Location_ID`)),
+('HandsomeManonHorse', 973330002, CONCAT(`Username`, `Location_ID`)),
+('HandsomeManonHorse', 973330003, CONCAT(`Username`, `Location_ID`)),
+('PumpkinButt', 121340001, CONCAT(`Username`, `Location_ID`)),
+('PumpkinButt', 121340002, CONCAT(`Username`, `Location_ID`)),
+('IhateAnimals32', 234350001, CONCAT(`Username`, `Location_ID`)),
+('ilovecatslol', 231120001, CONCAT(`Username`, `Location_ID`)),
+('Clipper', 227020001, CONCAT(`Username`, `Location_ID`)),
+('TheGreatProfessor', 973330002, CONCAT(`Username`, `Location_ID`)),
+('DogLover42', 545450001, CONCAT(`Username`, `Location_ID`)),
+('DogLover63', 545450001, CONCAT(`Username`, `Location_ID`));
  
 CREATE TABLE `Hates` (
   `Dog_ID` int(9) NOT NULL, 
@@ -81,7 +105,7 @@ INSERT INTO `Hates` (`Dog_ID`, `HatesDog_ID_2`, `HateKey`) VALUES
 (101775545, 987345103, CONCAT(`Dog_ID`, `HatesDog_ID_2`)),
 (987345103, 888761290, CONCAT(`Dog_ID`, `HatesDog_ID_2`)),
 (534246137, 757757775, CONCAT(`Dog_ID`, `HatesDog_ID_2`)),
-(303030303, 101775545, CONCAT(`Dog_ID`, `HatesDog_ID_2`)),
+(123456789, 101775545, CONCAT(`Dog_ID`, `HatesDog_ID_2`)),
 (101775545, 303030303, CONCAT(`Dog_ID`, `HatesDog_ID_2`)),
 (303030303, 101775545, CONCAT(`Dog_ID`, `HatesDog_ID_2`)),
 (123456789, 534246137, CONCAT(`Dog_ID`, `HatesDog_ID_2`));
@@ -102,7 +126,7 @@ INSERT INTO `Loves` (`Dog_ID`, `LovesDog_ID_2`, `LoveKey`) VALUES
 (101775545, 987345103, CONCAT(`Dog_ID`, `LovesDog_ID_2`)),
 (987345103, 888761290, CONCAT(`Dog_ID`, `LovesDog_ID_2`)),
 (534246137, 757757775, CONCAT(`Dog_ID`, `LovesDog_ID_2`)),
-(303030303, 101775545, CONCAT(`Dog_ID`, `LovesDog_ID_2`)),
+(303030303, 123456789, CONCAT(`Dog_ID`, `LovesDog_ID_2`)),
 (101775545, 303030303, CONCAT(`Dog_ID`, `LovesDog_ID_2`)),
 (303030303, 101775545, CONCAT(`Dog_ID`, `LovesDog_ID_2`)),
 (123456789, 534246137, CONCAT(`Dog_ID`, `LovesDog_ID_2`));
