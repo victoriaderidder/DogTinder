@@ -38,10 +38,10 @@ INSERT INTO `Dog_Profile` (`Phone_Number`, `Name`, `Gender`, `Fixed`, `Descripti
 (5034564567, 'Angel', 'F', 1, 'A wonderful dog that acts like a grandmother to baby dogs.', 534246136, 'DogLover63'),
 (3842901767, 'Kaylee', 'F', 1, 'Just the worst', 888761290, 'IhateAnimals32'),
 (9998887777, 'Sunny', 'F', 1, 'She will eat your socks', 123456789, 'DogLover42'),
-(3456781234, 'Jeremiah', 'M', 0, 'He was a bullfrog', 987345103, 'DogLover42'),
+(3456781234, 'Jeremiah', 'M', 0, 'He was a bullfrog', 987345103, 'shadethegreat'),
 (1982934012, 'Pluto', 'M', 0, 'Mickeys best friend', 303030303, 'PumpkinButt'),
 (5034564560, 'Lily', 'F', 0, 'A cute hyper dog that loves to bark as much as she loves cheese', 534246137, 'HandsomeManonHorse'),
-(5034564567, 'Elijah', 'M', 0, 'A Dog who looks and acts like a stuff animal.', 534246139, 'HandsomeManonHorse');
+(5034564567, 'Elijah', 'M', 0, 'A Dog who looks and acts like a stuff animal.', 534246139, 'TheGreatProfessor');
 
 
  
