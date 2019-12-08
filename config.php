@@ -2,10 +2,10 @@
 /* Database credentials. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
 define('DB_HOST', 'classmysql.engr.oregonstate.edu');
-  define('DB_USER', 'cs340_massonit');
-  define('DB_PASSWORD', 'Hakashia7');
-  define('DB_NAME', 'cs340_massonit');
-  define('CON_STRING', 'mysql:host=classmysql.engr.oregonstate.edu;dname=cs340_massonit');
+  define('DB_USER', 'cs340_onid');
+  define('DB_PASSWORD', 'password');
+  define('DB_NAME', 'cs340_onid');
+  define('CON_STRING', 'mysql:host=classmysql.engr.oregonstate.edu;dname=cs340_onid');
 
  
 /* Attempt to connect to MySQL database */
