@@ -1,9 +1,10 @@
 
 CREATE TABLE `User` (
   `Name` varchar(20) NOT NULL,
-  `Username` varchar(20) NOT NULL,
+  `Username` varchar(32) NOT NULL,
   `Password` varchar(256) NOT NULL,
-  `LoggedIn` tinyint(1) DEFAULT NULL
+  `LoggedIn` tinyint(1) DEFAULT NULL,
+  Primary Key(Username)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
@@ -21,9 +22,11 @@ INSERT INTO `User` (`Name`, `Username`, `Password`, `LoggedIn`) VALUES
 
 
 CREATE TABLE `UserID` (
-  `id` mediumint(9) NOT NULL,
+  `id` int AUTO_INCREMENT NOT NULL,
   `Username` varchar(32) NOT NULL,
   `TruePassword` varchar(20) NOT NULL
+     PRIMARY KEY (id),
+    FOREIGN KEY (Username) REFERENCES User(Username)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `UserID` (`id`, `Username`, `TruePassword`) VALUES
@@ -46,10 +49,9 @@ CREATE TABLE `Dog_Profile` (
   `Fixed` bit(1) NOT NULL, 
   `Description` varchar(500) DEFAULT NULL,
   `Dog_ID` int(9) NOT NULL, 
-   `Username` varchar(20) NOT NULL,
+   `Username` varchar(32) NOT NULL,
    PRIMARY KEY (Dog_ID),
     FOREIGN KEY (Username) REFERENCES User(Username)
-    
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
  
  
@@ -91,7 +93,7 @@ INSERT INTO `Location` ( `Location_ID`, `Name`, `Zip`,  `City`, `State`, `Addres
  
  
  CREATE TABLE `Visited` (
-  `Username` varchar(20) NOT NULL, 
+  `Username` varchar(32) NOT NULL, 
   `Location_ID` int(9) NOT NULL, 
    `VisitedKey` varchar(29) NOT NULL,
    PRIMARY KEY (VisitedKey),
