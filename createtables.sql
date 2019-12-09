@@ -1,21 +1,43 @@
-  CREATE TABLE `User` (
-  `Name` varchar(20) NOT NULL,
-  `Username` varchar(20) NOT NULL, 
-  `Password` varchar(20) NOT NULL, 
-    PRIMARY KEY (Username)
-)ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `User` (`Name`, `Username`, `Password`) VALUES
-('James', 'HandsomeManonHorse', 'Pile10carup'),
-('Ruth', 'DogLover42', '20FileOnaDay'),
-('Tiara', 'Clipper', 'greenBabiesDog12'),
-('Juli', 'TheGreatProfessor', 'CS340RocksOn'),
-('Audrey', 'PalaceDog', 'MaltesAretheBestDog'),
-('Greg', 'PumpkinButt', 'HalloweenCostumeContest2017'),
-('Mars', 'IhateAnimals32', 'AllAnimalsareannoying12'),
-('Johnny', 'shadethegreat', 'shadowsImtheN1ght'),
-('Jessie', 'ilovecatslol', 'catSaReBesT8'),
-('Amber', 'DogLover63', 'MyGreatBabushka12');
+CREATE TABLE `User` (
+  `Name` varchar(20) NOT NULL,
+  `Username` varchar(20) NOT NULL,
+  `Password` varchar(256) NOT NULL,
+  `LoggedIn` tinyint(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+INSERT INTO `User` (`Name`, `Username`, `Password`, `LoggedIn`) VALUES
+('Tiara', 'Clipper', '$2y$10$Hiw6mLeygVC9maJ/aq18D.NCW0e9mRbXvJAqfQUR3fumc7CIVvmeG', 0),
+('Ruth', 'DogLover42', '$2y$10$Kz0Er/Oy2U3Xy7XH9lxRT.6Qnfyu9SAbCNdmEG1TRTRe5RQhjF0cu', 0),
+('Amber', 'DogLover63', '$2y$10$PyK4cH3I/rpJDFHaKvYGwe0Vg.TDEbbMDIYxiQS8oFP2Q8Yi.UE2e', 0),
+('James', 'HandsomeManonHorse', '$2y$10$LFhq1d.r3B64XFbbyUbP8eKX2VSMD6X8lFgTfJs6M.C5DPppfPIPe', 0),
+('Mars', 'IhateAnimals32', '$2y$10$xakr7354XYfAds71TBeOwuqOeCc3RD92lsSR4sjQ35KYQXJmMTacm', 0),
+('Jessie', 'ilovecatslol', '$2y$10$3jI0ebd/74QHsqjHNUNhmumrFp3LYFEEaHJbNoJesieatvxY8mSMu', 0),
+('Audrey', 'PalaceDog', '$2y$10$hqZrMa9.iE7WLx0BCGZOh.cADN1Hf9bWtNuDN34Z/HFbgTAMkVhWa', 0),
+('Greg', 'PumpkinButt', '$2y$10$sDmA9Tl1HM0CXpwfAxIcXuu6pi.VQ4VjqOjuC7pV8gnQ0mRqCoaT.', 0),
+('Johnny', 'shadethegreat', '$2y$10$cKJxbwpw3/CifwgMHhuto..9VhFlbPMIogRYVy/uqHCyM139dNHF.', 0),
+('Juli', 'TheGreatProfessor', '$2y$10$YUKtoacQBfTLB2JB6iekQ.oEC9bkiRd8jlH1wGiPqTYfR1FKhvEAm', 0);
+
+
+CREATE TABLE `UserID` (
+  `id` mediumint(9) NOT NULL,
+  `Username` varchar(32) NOT NULL,
+  `TruePassword` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `UserID` (`id`, `Username`, `TruePassword`) VALUES
+(2, 'Clipper', 'greenBabiesDog12'),
+(5, 'HandsomeManonHorse', 'Pile10carup'),
+(6, 'PalaceDog', 'MaltesAretheBestDog'),
+(7, 'DogLover42', '20FileOnaDay'),
+(8, 'TheGreatProfessor', 'CS340RocksOn'),
+(10, 'PumpkinButt', 'HalloweenCostume2017'),
+(12, 'shadethegreat', 'shadowsImtheN1ght'),
+(13, 'ilovecatslol', 'catSaReBesT8'),
+(14, 'DogLover63', 'MyGreatBabushka12'),
+(15, 'IhateAnimals32', 'AllAnimalsAnnoying');
+
 
 CREATE TABLE `Dog_Profile` (
   `Phone_Number` bigint(11) NOT NULL,
