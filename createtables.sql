@@ -24,7 +24,7 @@ INSERT INTO `User` (`Name`, `Username`, `Password`, `LoggedIn`) VALUES
 CREATE TABLE `UserID` (
   `id` int AUTO_INCREMENT NOT NULL,
   `Username` varchar(32) NOT NULL,
-  `TruePassword` varchar(20) NOT NULL
+  `TruePassword` varchar(20) NOT NULL,
      PRIMARY KEY (id),
     FOREIGN KEY (Username) REFERENCES User(Username)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
