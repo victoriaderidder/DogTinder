@@ -70,7 +70,7 @@ INSERT INTO `Dog_Profile` (`Phone_Number`, `Name`, `Gender`, `Fixed`, `Descripti
 
  
 CREATE TABLE `Location` (
-  `Location_ID` int(9) NOT NULL, 
+  `Location_ID` int AUTO_INCREMENT NOT NULL, 
   `Name` varchar(50) NOT NULL,
   `Zip` int(5) NOT NULL, 
   `City` varchar(20) NOT NULL,
