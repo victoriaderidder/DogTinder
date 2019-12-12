@@ -50,6 +50,8 @@ CREATE TABLE `Dog_Profile` (
   `Description` varchar(500) DEFAULT NULL,
   `Dog_ID` int(9) NOT NULL, 
    `Username` varchar(32) NOT NULL,
+  `HateCount` int(11) NOT NULL DEFAULT 0,
+  `LoveCount` int(11) NOT NULL DEFAULT 0,
    PRIMARY KEY (Dog_ID),
     FOREIGN KEY (Username) REFERENCES User(Username)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -113,14 +115,24 @@ INSERT INTO `Visited` (`Username`, `Location_ID`, `VisitedKey`) VALUES
 ('TheGreatProfessor', 973330002, CONCAT(`Username`, `Location_ID`)),
 ('DogLover42', 545450001, CONCAT(`Username`, `Location_ID`)),
 ('DogLover63', 545450001, CONCAT(`Username`, `Location_ID`));
- 
-CREATE TABLE `Hates` (
+
+                                 
+CREATE TABLE `Hates`(
   `Dog_ID` int(9) NOT NULL, 
   `HatesDog_ID_2` int(9) NOT NULL,
   `HateKey` bigint(18) NOT NULL,
     PRIMARY KEY (HateKey),
-   FOREIGN KEY (Dog_ID) REFERENCES Dog_Profile(Dog_ID)
-)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  INDEX `Dog_ID_key_idx` (`Dog_ID` ASC),
+  INDEX `HatesDog_ID_2_key_idx` (`HatesDog_ID_2` ASC),
+  CONSTRAINT `Dog_ID_key`
+    FOREIGN KEY (`Dog_ID`)
+    REFERENCES Dog_Profile(Dog_ID)
+    ON DELETE NO ACTION,
+  CONSTRAINT `HatesDog_ID_2_key`
+    FOREIGN KEY (`HatesDog_ID_2`)
+    REFERENCES Dog_Profile(Dog_ID)
+    ON DELETE NO ACTION); 
+                                 
  
 INSERT INTO `Hates` (`Dog_ID`, `HatesDog_ID_2`, `HateKey`) VALUES
 (101775545, 888761290, CONCAT(`Dog_ID`, `HatesDog_ID_2`)),
@@ -128,20 +140,30 @@ INSERT INTO `Hates` (`Dog_ID`, `HatesDog_ID_2`, `HateKey`) VALUES
 (987345103, 101775545, CONCAT(`Dog_ID`, `HatesDog_ID_2`)),
 (101775545, 987345103, CONCAT(`Dog_ID`, `HatesDog_ID_2`)),
 (987345103, 888761290, CONCAT(`Dog_ID`, `HatesDog_ID_2`)),
-(534246137, 757757775, CONCAT(`Dog_ID`, `HatesDog_ID_2`)),
+(534246137, 123456789, CONCAT(`Dog_ID`, `HatesDog_ID_2`)),
 (123456789, 101775545, CONCAT(`Dog_ID`, `HatesDog_ID_2`)),
 (101775545, 303030303, CONCAT(`Dog_ID`, `HatesDog_ID_2`)),
 (303030303, 101775545, CONCAT(`Dog_ID`, `HatesDog_ID_2`)),
 (123456789, 534246137, CONCAT(`Dog_ID`, `HatesDog_ID_2`));
 
 
-CREATE TABLE `Loves` (
+ 
+CREATE TABLE `Loves`(
   `Dog_ID` int(9) NOT NULL, 
   `LovesDog_ID_2` int(9) NOT NULL,
   `LoveKey` bigint(18) NOT NULL,
-     PRIMARY KEY (LoveKey),
-   FOREIGN KEY (Dog_ID) REFERENCES Dog_Profile(Dog_ID)
-)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+    PRIMARY KEY (LoveKey),
+  INDEX `Dog_ID_key_idx` (`Dog_ID` ASC),
+  INDEX `LovesDog_ID_2_key_idx` (`LovesDog_ID_2` ASC),
+  CONSTRAINT `Dog_ID_key`
+    FOREIGN KEY (`Dog_ID`)
+    REFERENCES Dog_Profile(Dog_ID)
+    ON DELETE NO ACTION,
+  CONSTRAINT `HatesDog_ID_2_key`
+    FOREIGN KEY (`LovesDog_ID_2`)
+    REFERENCES Dog_Profile(Dog_ID)
+    ON DELETE NO ACTION); 
+
  
 INSERT INTO `Loves` (`Dog_ID`, `LovesDog_ID_2`, `LoveKey`) VALUES
 (101775545, 888761290, CONCAT(`Dog_ID`, `LovesDog_ID_2`)),
@@ -149,7 +171,7 @@ INSERT INTO `Loves` (`Dog_ID`, `LovesDog_ID_2`, `LoveKey`) VALUES
 (987345103, 101775545, CONCAT(`Dog_ID`, `LovesDog_ID_2`)),
 (101775545, 987345103, CONCAT(`Dog_ID`, `LovesDog_ID_2`)),
 (987345103, 888761290, CONCAT(`Dog_ID`, `LovesDog_ID_2`)),
-(534246137, 757757775, CONCAT(`Dog_ID`, `LovesDog_ID_2`)),
+(534246137, 534246139, CONCAT(`Dog_ID`, `LovesDog_ID_2`)),
 (303030303, 123456789, CONCAT(`Dog_ID`, `LovesDog_ID_2`)),
 (101775545, 303030303, CONCAT(`Dog_ID`, `LovesDog_ID_2`)),
 (303030303, 101775545, CONCAT(`Dog_ID`, `LovesDog_ID_2`)),
