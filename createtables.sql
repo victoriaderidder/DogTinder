@@ -1,3 +1,4 @@
+CREATE VIEW `534246137`  AS  select `l`.`State` AS `State`,`d`.`Name` AS `DogName`,`d`.`Dog_ID` AS `Dog_ID`,`l`.`Name` AS `LocName`,`l`.`Location_ID` AS `Location_ID` from ((`Dog_Profile` `d` join `Visited` `v`) join `Location` `l`) where `l`.`Location_ID` = `v`.`Location_ID` and `v`.`Username` = `d`.`Username` and `v`.`Username` = 'HandsomeManonHorse' ;
 
 CREATE TABLE `User` (
   `Name` varchar(20) NOT NULL,
