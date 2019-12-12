@@ -114,6 +114,19 @@
                             if(mysqli_stmt_execute($stmt)){
                                 // Store result
                                 mysqli_stmt_store_result($stmt);
+                                 $query =  "CREATE VIEW `$dog_id` as
+                                SELECT l.State, d.Name as DogName, d.Dog_ID, l.Name as LocName, l.Location_ID 
+                                   FROM Dog_Profile d, Visited v, Location l
+                                WHERE l.Location_ID = v.Location_ID AND v.Username = d.Username AND v.Username = '$username';";
+                                $result = mysqli_query($link, $query);
+                                if (!$result) {
+                                    die("Query to show fields from table failed1");
+                                }
+                                if(mysqli_num_rows($result) == 0){   
+                                    echo "<p> You have succeed in making a view </p>";
+                                }
+                                // Free result set
+                                mysqli_free_result($result);                           
                                 
                                 // Check if username exists, if yes then verify password
                                 if(mysqli_stmt_num_rows($stmt) == 1){                    
