@@ -1,4 +1,3 @@
-CREATE VIEW `534246137`  AS  select `l`.`State` AS `State`,`d`.`Name` AS `DogName`,`d`.`Dog_ID` AS `Dog_ID`,`l`.`Name` AS `LocName`,`l`.`Location_ID` AS `Location_ID` from ((`Dog_Profile` `d` join `Visited` `v`) join `Location` `l`) where `l`.`Location_ID` = `v`.`Location_ID` and `v`.`Username` = `d`.`Username` and `v`.`Username` = 'HandsomeManonHorse' ;
 
 CREATE TABLE `User` (
   `Name` varchar(20) NOT NULL,
@@ -71,7 +70,6 @@ INSERT INTO `Dog_Profile` (`Phone_Number`, `Name`, `Gender`, `Fixed`, `Descripti
 (5034564567, 'Elijah', 'M', 0, 'A Dog who looks and acts like a stuff animal.', 534246139, 'TheGreatProfessor');
 
 
-
 CREATE TABLE `ImgUpload` (
   `id` int(11) AUTO_INCREMENT NOT NULL,
   `Dog_ID` int(9) NOT NULL,
@@ -125,6 +123,43 @@ INSERT INTO `Visited` (`Username`, `Location_ID`, `VisitedKey`) VALUES
 ('TheGreatProfessor', 973330002, CONCAT(`Username`, `Location_ID`)),
 ('DogLover42', 545450001, CONCAT(`Username`, `Location_ID`)),
 ('DogLover63', 545450001, CONCAT(`Username`, `Location_ID`));
+                                 
+                                 
+CREATE VIEW `534246139`  AS  select `l`.`State` AS `State`,`d`.`Name` AS `DogName`,`d`.`Dog_ID` AS `Dog_ID`,`l`.`Name` AS `LocName`,`l`.`Location_ID` AS `Location_ID` 
+from ((`Dog_Profile` `d` join `Visited` `v`) join `Location` `l`) 
+where `l`.`Location_ID` = `v`.`Location_ID` and `v`.`Username` = `d`.`Username` and `v`.`Username` = 'TheGreatProfessor' ;
+
+CREATE VIEW `534246137`  AS  select `l`.`State` AS `State`,`d`.`Name` AS `DogName`,`d`.`Dog_ID` AS `Dog_ID`,`l`.`Name` AS `LocName`,`l`.`Location_ID` AS `Location_ID` 
+from ((`Dog_Profile` `d` join `Visited` `v`) join `Location` `l`) 
+where `l`.`Location_ID` = `v`.`Location_ID` and `v`.`Username` = `d`.`Username` and `v`.`Username` = 'HandsomeManonHorse' ;
+
+CREATE VIEW `564565638`  AS  select `l`.`State` AS `State`,`d`.`Name` AS `DogName`,`d`.`Dog_ID` AS `Dog_ID`,`l`.`Name` AS `LocName`,`l`.`Location_ID` AS `Location_ID` 
+from ((`Dog_Profile` `d` join `Visited` `v`) join `Location` `l`) 
+where `l`.`Location_ID` = `v`.`Location_ID` and `v`.`Username` = `d`.`Username` and `v`.`Username` = 'PalaceDog' ;
+
+CREATE VIEW `101775545`  AS  select `l`.`State` AS `State`,`d`.`Name` AS `DogName`,`d`.`Dog_ID` AS `Dog_ID`,`l`.`Name` AS `LocName`,`l`.`Location_ID` AS `Location_ID` 
+from ((`Dog_Profile` `d` join `Visited` `v`) join `Location` `l`) 
+where `l`.`Location_ID` = `v`.`Location_ID` and `v`.`Username` = `d`.`Username` and `v`.`Username` = 'Clipper' ;
+
+CREATE VIEW `534246136`  AS  select `l`.`State` AS `State`,`d`.`Name` AS `DogName`,`d`.`Dog_ID` AS `Dog_ID`,`l`.`Name` AS `LocName`,`l`.`Location_ID` AS `Location_ID` 
+from ((`Dog_Profile` `d` join `Visited` `v`) join `Location` `l`) 
+where `l`.`Location_ID` = `v`.`Location_ID` and `v`.`Username` = `d`.`Username` and `v`.`Username` = 'DogLover63' ;
+
+CREATE VIEW `987345103`  AS  select `l`.`State` AS `State`,`d`.`Name` AS `DogName`,`d`.`Dog_ID` AS `Dog_ID`,`l`.`Name` AS `LocName`,`l`.`Location_ID` AS `Location_ID` 
+from ((`Dog_Profile` `d` join `Visited` `v`) join `Location` `l`) 
+where `l`.`Location_ID` = `v`.`Location_ID` and `v`.`Username` = `d`.`Username` and `v`.`Username` = 'shadethegreat' ;
+
+CREATE VIEW `303030303`  AS  select `l`.`State` AS `State`,`d`.`Name` AS `DogName`,`d`.`Dog_ID` AS `Dog_ID`,`l`.`Name` AS `LocName`,`l`.`Location_ID` AS `Location_ID` 
+from ((`Dog_Profile` `d` join `Visited` `v`) join `Location` `l`) 
+where `l`.`Location_ID` = `v`.`Location_ID` and `v`.`Username` = `d`.`Username` and `v`.`Username` = 'shadethegreat' ;
+
+CREATE VIEW `123456789`  AS  select `l`.`State` AS `State`,`d`.`Name` AS `DogName`,`d`.`Dog_ID` AS `Dog_ID`,`l`.`Name` AS `LocName`,`l`.`Location_ID` AS `Location_ID` 
+from ((`Dog_Profile` `d` join `Visited` `v`) join `Location` `l`) 
+where `l`.`Location_ID` = `v`.`Location_ID` and `v`.`Username` = `d`.`Username` and `v`.`Username` = 'PumpkinButt' ;
+
+CREATE VIEW `888761290`  AS  select `l`.`State` AS `State`,`d`.`Name` AS `DogName`,`d`.`Dog_ID` AS `Dog_ID`,`l`.`Name` AS `LocName`,`l`.`Location_ID` AS `Location_ID` 
+from ((`Dog_Profile` `d` join `Visited` `v`) join `Location` `l`) 
+where `l`.`Location_ID` = `v`.`Location_ID` and `v`.`Username` = `d`.`Username` and `v`.`Username` = 'IhateAnimals32' ;
 
                                  
 CREATE TABLE `Hates`(
