@@ -1,4 +1,4 @@
-How to build the project on your OSU website:
+How to build the project on your OSU website:  
 
 1. Grab the master branch from github.
 2. Rename the master branch name to something shorter.
