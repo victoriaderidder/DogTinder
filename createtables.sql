@@ -155,11 +155,11 @@ CREATE TABLE `Loves`(
     PRIMARY KEY (LoveKey),
   INDEX `Dog_ID_key_idx` (`Dog_ID` ASC),
   INDEX `LovesDog_ID_2_key_idx` (`LovesDog_ID_2` ASC),
-  CONSTRAINT `Dog_ID_key`
+  CONSTRAINT `Dog_ID2_key`
     FOREIGN KEY (`Dog_ID`)
     REFERENCES Dog_Profile(Dog_ID)
     ON DELETE NO ACTION,
-  CONSTRAINT `HatesDog_ID_2_key`
+  CONSTRAINT `LovesDog_ID_2_key`
     FOREIGN KEY (`LovesDog_ID_2`)
     REFERENCES Dog_Profile(Dog_ID)
     ON DELETE NO ACTION); 
