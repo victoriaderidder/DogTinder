@@ -222,20 +222,4 @@ INSERT INTO `Loves` (`Dog_ID`, `LovesDog_ID_2`, `LoveKey`) VALUES
 (303030303, 101775545, CONCAT(`Dog_ID`, `LovesDog_ID_2`)),
 (123456789, 534246137, CONCAT(`Dog_ID`, `LovesDog_ID_2`));
                               
-                              
-DELIMITER $$
-CREATE TRIGGER `updateHates` AFTER INSERT ON `Hates` FOR EACH ROW begin
-SET @Dog_ID = new.HatesDog_ID_2;
-UPDATE Dog_Profile SET HateCount = HateCount + 1 WHERE Dog_ID = @Dog_ID;
-end
-$$
-DELIMITER ;
-
-                              
-DELIMITER $$
-CREATE TRIGGER `updateLoves` AFTER INSERT ON `Loves` FOR EACH ROW begin
-SET @Dog_ID = new.LovesDog_ID_2;
-UPDATE Dog_Profile SET LoveCount = LoveCount + 1 WHERE Dog_ID = @Dog_ID;
-end
-$$
-DELIMITER ;
+                            
