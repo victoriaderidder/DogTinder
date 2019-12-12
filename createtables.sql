@@ -70,6 +70,15 @@ INSERT INTO `Dog_Profile` (`Phone_Number`, `Name`, `Gender`, `Fixed`, `Descripti
 (5034564567, 'Elijah', 'M', 0, 'A Dog who looks and acts like a stuff animal.', 534246139, 'TheGreatProfessor');
 
 
+
+CREATE TABLE `ImgUpload` (
+  `id` int(11) AUTO_INCREMENT NOT NULL,
+  `Dog_ID` int(9) NOT NULL,
+  `status` int(11) NOT NULL DEFAULT 0,
+  `ImgName` varchar(32) NOT NULL,
+    PRIMARY KEY (`id`),
+    FOREIGN KEY (`Dog_ID`) REFERENCES `Dog_Profile` (`Dog_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
  
 CREATE TABLE `Location` (
   `Location_ID` int(9) NOT NULL, 
