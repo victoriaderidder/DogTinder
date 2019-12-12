@@ -88,7 +88,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $sql = "INSERT INTO `UserID` (`Username`, `TruePassword`) VALUES(?, ?);";    
                 $stmt = mysqli_stmt_init($link);
                 if(!mysqli_stmt_prepare($stmt, $sql)){
-                    echo "Something went wrong. Please try again later2.";
+                    echo "Something went wrong. Please try again later.";
                 }else{
                     mysqli_stmt_bind_param($stmt, "ss", $param_username, $password);
                     mysqli_stmt_execute($stmt);

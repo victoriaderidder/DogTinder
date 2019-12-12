@@ -1,4 +1,6 @@
 <?php
+// Initialize the session
+session_start();
 // Include config file
 require_once "config.php";
  
@@ -8,7 +10,6 @@ $locname_err = $zip_err = $city_err = $state_err = $address_err = "";
  
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
- 
     // Validate Location
     if(empty(trim($_POST["locname"]))){
         $locname_err = "Please enter a Location name.";
@@ -136,31 +137,33 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 	
 	// Grab Current Location
-	//$current_location = "SELECT name FROM 'Location' WHERE "
+	
     
     // Check input errors before inserting in database
     if(empty($locname_err) && empty($zip_err) && empty($city_err) && empty($state_err) && empty($address_err)){
         
         // Prepare an insert statement
-        $sql = "INSERT INTO `Location` (`Name`, `Zip`, `City`,`State`, 'Address') VALUES(?, ?, ?, ?, ?);"; 
+        $sql = "INSERT INTO `Location` (`Name`, `Zip`, `City`, `State`, `Address`) VALUES(?, ?, ?, ?, ?);"; 
          
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "sss", $param_locname, $param_zip, $param_city, $param_state, $param_address);
-            
+            echo "set params";
             // Set parameters
             $param_locname = $locname;
             $param_zip = $zip;
 			$param_city = $city;
 			$param_state = $state;
 			$param_address = $address;
-            
+
+			// Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Redirect to Location page
-                $sql = "INSERT INTO `Location` (`Name`, `Zip`, `City`,`State`, 'Address') VALUES(?, ?, ?, ?, ?);";    
-                $stmt = mysqli_stmt_init($link);]]
+				echo "redirecting into Location";
+                $sql = "INSERT INTO `Location` (`Name`, `Zip`, `City`, `State`, `Address`) VALUES(?, ?, ?, ?, ?);";    
+                $stmt = mysqli_stmt_init($link);
                 if(!mysqli_stmt_prepare($stmt, $sql)){
-                    echo "Something went wrong. Please try again later2.";
+                    echo "Something went wrong. Please try again later.";
                 }else{
                     mysqli_stmt_bind_param($stmt, "ss", $param_locname, $param_zip, $param_city, $param_state, $param_address);
                     mysqli_stmt_execute($stmt);
@@ -184,7 +187,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sign Up</title>
+    <title>Add a Location</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <style type="text/css">
         body{ font: 14px sans-serif; }
