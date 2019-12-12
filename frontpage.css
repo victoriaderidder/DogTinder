@@ -1,0 +1,32 @@
+#welcomeheader {
+  margin: auto;
+  position: center;
+  width:75%;
+  margin-top:5%;
+  background-color: #fff;
+  border-style: solid;
+  border-color: #f00;
+  padding: 10px;
+  padding-left:30px;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #f00 !important;
+    border-color: #f00;
+}
+
+#loginbutton {
+  margin-left: 15%;
+  margin-top: 85%;
+  vertical-align: top;
+  display: inline-block;
+}
+
+#registerbutton {
+  margin: auto;
+  position: center;
+  margin-top: 85%;
+  margin-left: 35%;
+  vertical-align: top;
+  display: inline-block;
+}

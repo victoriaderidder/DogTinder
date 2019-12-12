@@ -1,0 +1,30 @@
+body {
+  background-color: #ff6060;
+}
+
+#cent {
+  position:absolute;
+  left:38%;
+  margin-top:2.7%;
+  height: 90%;
+  width: 37%;
+  background-color: #fff;
+  margin-left:-100px;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #f00 !important;
+    border-color: #f00;
+}
+
+a {
+	color: #f00;
+}
+
+.form-control {
+	width: 75%;
+}
+
+#cent2 {
+	margin-left: 2%;
+}
