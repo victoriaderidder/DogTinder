@@ -18,6 +18,8 @@ session_start();
         <a href="profilecreation.php" class="btn btn-primary">Create New Dog</a><p>
         <a href="swipe.php" class="btn btn-primary">Swipe On Dogs</a><p>
         <a href="loves.php" class="btn btn-primary">Dogs You Love</a><p>
+        <a href="location.php" class="btn btn-primary">Vist some Locations</a><p>
+        <a href="visited.php" class="btn btn-primary">Look at your Visited Locations</a><p>
         <a href="logout.php" class="btn btn-primary">Sign Out of Your Account</a></center>
     </div>
 </body>
