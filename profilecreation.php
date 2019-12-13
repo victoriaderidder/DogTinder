@@ -122,9 +122,6 @@
                                 if (!$result) {
                                     die("Query to show fields from table failed1");
                                 }
-                                if(mysqli_num_rows($result) == 0){   
-                                    echo "<p> You have succeed in making a view </p>";
-                                }
                                 // Free result set
                                 mysqli_free_result($result);                           
                                 
