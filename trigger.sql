@@ -1,3 +1,6 @@
+--Add each trigger one by one.
+
+--Trigger for Locations--
 DELIMITER $$
  CREATE TRIGGER `Before_Insert_Location` BEFORE INSERT ON `Visited`
  FOR EACH ROW BEGIN
