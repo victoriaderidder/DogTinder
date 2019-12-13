@@ -36,7 +36,6 @@ session_start();
 				}
 			}
         $query = "SELECT * FROM `$Dog`";
-        echo "<p>".$Dog."</p>";
 		$result = mysqli_query($conn, $query);
 		echo "<h1>$table</h1>";
 		echo '<table class = "loves_table"><tr>';
